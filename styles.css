@@ -1,0 +1,6 @@
+/* Utilidades suaves para marca sin interferir con Bootstrap */
+body { scroll-behavior: smooth; }
+.text-brand { color: #0b3b7e; }
+.bg-brand-soft { background: #f5f9ff; }
+.back-link { text-decoration: none; font-weight: 600; }
+.back-link:hover { text-decoration: underline; }

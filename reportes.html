@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Generación de Reportes — Hospital San Andrés</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="header"><h1>HOSPITAL SAN ANDRÉS</h1></div>
+
+    <h2>Generación de Reportes</h2>
+    <div class="content-area">
+      <form id="formReportes">
+        <label for="tipoReporte">Tipo de Reporte</label>
+        <select id="tipoReporte" name="tipoReporte" required>
+          <option value="" disabled selected>Selecciona una opción</option>
+          <option value="examenes">Exámenes de laboratorio</option>
+          <option value="citas">Citas agendadas</option>
+          <option value="ingresos">Ingresos hospitalarios</option>
+        </select>
+
+        <label for="fechaInicio">Fecha inicio</label>
+        <input type="date" id="fechaInicio" name="fechaInicio" required>
+
+        <label for="fechaFin">Fecha fin</label>
+        <input type="date" id="fechaFin" name="fechaFin" required>
+
+        <button type="submit">Generar Reporte</button>
+      </form>
+      <p style="margin-top:12px;"><a href="./index.html">← Volver al menú</a></p>
+    </div>
+
+    <div class="footer"><p>&copy; 2025 Hospital San Andrés</p></div>
+  </div>
+
+  <script>
+    document.getElementById('formReportes')?.addEventListener('submit', e => {
+      e.preventDefault();
+      const f = e.target;
+      if (f.fechaInicio.value && f.fechaFin.value && f.fechaInicio.value > f.fechaFin.value) {
+        alert('La fecha inicio no puede ser mayor a la fecha fin');
+        return;
+      }
+      alert('Generando reporte…');
+    });
+  </script>
+</body>
+</html>

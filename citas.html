@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gestión de Citas — Hospital San Andrés</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="header"><h1>HOSPITAL SAN ANDRÉS</h1></div>
+
+    <h2>Gestión de Citas</h2>
+    <div class="content-area">
+      <form id="formCitas">
+        <label for="nombreCita">Nombre del paciente</label>
+        <input type="text" id="nombreCita" name="nombreCita" required>
+
+        <label for="fechaCita">Fecha de la cita</label>
+        <input type="date" id="fechaCita" name="fechaCita" required>
+
+        <label for="horaCita">Hora</label>
+        <input type="time" id="horaCita" name="horaCita" required>
+
+        <button type="submit">Generar Cita</button>
+      </form>
+      <p style="margin-top:12px;"><a href="./index.html">← Volver al menú</a></p>
+    </div>
+
+    <div class="footer"><p>&copy; 2025 Hospital San Andrés</p></div>
+  </div>
+
+  <script>
+    document.getElementById('formCitas')?.addEventListener('submit', e => {
+      e.preventDefault();
+      alert('Cita generada');
+      e.target.reset();
+    });
+  </script>
+</body>
+</html>
